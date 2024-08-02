@@ -1,0 +1,40 @@
+{% extends 'tasks_a/base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login_form.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="form-div">
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3>User Login</h3>
+        <p class="tell">Enter your details here</p>
+
+        {{ form.non_field_errors }}
+        <!-- for username -->
+        <div class="form-group">
+            <input type="text" name="{{ form.username.name }}" id="id_username" placeholder="Username">
+
+            {{ form.username.errors }}
+        </div>
+
+        <!-- for password -->
+        <div class="form-group">
+            <input type="password" name="{{ form.password.name }}" id="id_password" placeholder="Password">
+
+            {{ form.password.errors }}
+        </div>
+        <button type="submit">Sign in</button>
+        <p class="toggle-text">Don't have an account?<a href="{% url 'signup' %}" class="toggle-link">Register Now</a>
+        </p>
+    </form>
+</div>
+
+
+{% endblock %}

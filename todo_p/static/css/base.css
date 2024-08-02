@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+body {
+    background-color: #f6f2eb;
+}
+
+.nav-bar {
+    height: 60px;
+    padding: 0 100px;
+    /* background-color: wheat; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-ul {
+    display: flex;
+}
+
+.nav-list {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: large;
+}
+
+main {
+    padding: 50px 100px 0 100px;
+}
+
+#username {
+    color: red;
+}
+
+.add-todo {
+    display: flex;
+}

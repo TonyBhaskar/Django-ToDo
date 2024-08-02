@@ -1,0 +1,54 @@
+{% extends 'tasks_a/base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login_form.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="form-div">
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3>User SignUp</h3>
+        <p class="tell">Enter your details here</p>
+        <!-- First Name Field -->
+        <div class="form-group">
+            <input type="text" name="{{ form.first_name.name }}" id="id_first_name" placeholder="Name">
+            {{ form.first_name.errors }}
+        </div>
+
+
+        <!-- Username Field -->
+        <div class="form-group">
+            <input type="text" name="{{ form.username.name }}" id="id_username" placeholder="Username" required>
+            {{ form.username.errors }}
+        </div>
+
+
+
+        <!-- Password1 Field  -->
+        <div class="form-group">
+            <input type="password" name="{{ form.password1.name}}" id="id_password1" placeholder="Password">
+            {{ form.password1.errors}}
+        </div>
+
+        <!-- Confirm Password Field  -->
+        <div class="form-group">
+            <input type="password" name="{{ form.password2.name}}" id="id_password2" placeholder="Confirm Password">
+            {{ form.password2.errors }}
+        </div>
+
+
+
+        <!-- {{form}} -->
+        <button type="submit">Sign up</button>
+        <p class="toggle-text">Already have an account?<a href="{% url 'login' %}" class="toggle-link">Login</a></p>
+    </form>
+</div>
+
+
+{% endblock %}

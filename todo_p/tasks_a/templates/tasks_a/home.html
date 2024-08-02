@@ -1,0 +1,24 @@
+{% extends 'tasks_a/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="add-todo" style="display: flex; width: 100%;justify-content: space-between;">
+    <h1>Welcome <span id="username">{{user.username}}!</span></h1>
+    <button>+ Add ToDo</button>
+</div>
+
+
+{% for todo in todos %}
+<ul>
+    <li>{{todo.title}} - completed: {{todo.completed|yesno:"Yes,No"}}
+    </li>
+</ul>
+
+{% empty %}
+<p>No todos found add now</p>
+<img src="{% static 'images/empty-todo.png' %}" alt="empty-todo">
+{% endfor %}
+
+{% endblock %}
