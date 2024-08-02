@@ -6,13 +6,28 @@
 
 <div class="add-todo" style="display: flex; width: 100%;justify-content: space-between;">
     <h1>Welcome <span id="username">{{user.username}}!</span></h1>
-    <button>+ Add ToDo</button>
+    <button
+        style="height: 25px; border: none; box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1.5px; background-color: white; padding: 10px; display: flex; align-items: center; cursor: pointer;">+
+        Add ToDo</button>
 </div>
 
 
 {% for todo in todos %}
 <ul>
-    <li>{{todo.title}} - completed: {{todo.completed|yesno:"Yes,No"}}
+    <li
+        style="width: 100%; background-color: white; margin-bottom: 25px; list-style: none; display: flex; align-items: center; justify-content: space-between; flex-direction: row; border-radius: 10px; padding: 10px;">
+        <div>
+            <p style="margin-bottom: 5px;"><strong>{{todo.title}}</strong></p>
+            <p>Completed:
+                {{todo.completed|yesno:"Yes,No"}}</p>
+        </div>
+
+        <div>
+            <a href=""><img src="{% static 'images/edit_icon.png' %}" alt="" height="20px"
+                    style="margin-right: 20px;"></a>
+            <a href=""><img src="{% static 'images/delete_icon.png' %}" alt="" height="20px"></a>
+        </div>
+
     </li>
 </ul>
 
