@@ -12,7 +12,6 @@ body {
 .nav-bar {
     height: 60px;
     padding: 0 100px;
-    /* background-color: wheat; */
     display: flex;
     justify-content: space-between;
     align-items: center;

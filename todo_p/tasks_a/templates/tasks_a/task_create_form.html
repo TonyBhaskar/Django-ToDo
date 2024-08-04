@@ -1,0 +1,26 @@
+{% extends 'tasks_a/base.html' %}
+{% load static %}
+
+{% block title %} Update Task {% endblock %}
+
+{% block content %}
+
+<style>
+    #id_title {
+        width: 25%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<h1>Create Task</h1>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"
+        style="margin-top: 20px; padding: 5px; background-color: green; border: none; border-radius: 5px; color: white;">CREATE</button>
+    <a href="{% url 'home' %}"
+        style="text-decoration: none; background-color: rgb(97, 97, 97); color: white; padding: 5px; border-radius: 5px; font-size: small;">No,
+        take me
+        back</a>
+</form>
+
+{% endblock %}

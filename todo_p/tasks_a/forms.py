@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
+from .models import Todo
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=35, required=False)
@@ -16,3 +17,8 @@ class SignUpForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class TaskCreateForm(forms.ModelForm):
+    class Meta:
+        model = Todo
+        fields = ['title', 'completed']

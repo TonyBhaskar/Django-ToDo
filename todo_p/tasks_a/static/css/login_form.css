@@ -1,14 +1,11 @@
 .form-div {
     display: flex;
     justify-content: center;
-    background-color: red;
     height: 80vh;
-    /* width: 400px; */
     align-items: center;
 }
 
 form {
-    /* border: 3px solid black; */
     background-color: white;
     border-radius: 10px;
     width: 450px;

@@ -1,0 +1,22 @@
+{% extends 'tasks_a/base.html' %}
+{% load static %}
+
+{% block title %} Task Delete {% endblock %}
+
+
+
+{% block content %}
+
+<h1>Confirm Deletion</h1>
+<p>Are you sure you want to delete <span style="color: red;">"{{ object }}"?</span></p>
+<form method="post">{% csrf_token %}
+    <button type="submit"
+        style="margin-top: 20px; padding: 5px; background-color: tomato; border: none; border-radius: 5px; color: white;">Yes,
+        I'm sure</button>
+    <a href="{% url 'home' %}"
+        style="text-decoration: none; background-color: rgb(97, 97, 97); color: white; padding: 5px; border-radius: 5px; font-size: small;">No,
+        take me
+        back</a>
+</form>
+
+{% endblock %}

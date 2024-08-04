@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<div class="form-div">
+<div class="form-div" style="background-color: transparent;">
     <form action="" method="post">
         {% csrf_token %}
         <h3>User Login</h3>
@@ -31,7 +31,8 @@
             {{ form.password.errors }}
         </div>
         <button type="submit">Sign in</button>
-        <p class="toggle-text">Don't have an account?<a href="{% url 'signup' %}" class="toggle-link">Register Now</a>
+        <p class="toggle-text">Don't have an account?<a href="{% url 'signup' %}" class="toggle-link"
+                style="color: rgb(245, 170, 78); margin-left: 5px;">Register Now</a>
         </p>
     </form>
 </div>

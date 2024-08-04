@@ -4,6 +4,13 @@
 
 {% block content %}
 
+<style>
+    .page-link {
+        text-decoration: none;
+        color: rgb(240, 8, 8);
+        margin: 20px 10px;
+    }
+</style>
 <div class="add-todo" style="display: flex; width: 100%;justify-content: space-between;">
     <h1>Welcome <span id="username">{{user.username}}!</span></h1>
     <a href="{% url 'task-create' %}"
@@ -36,5 +43,27 @@
 <p>No todos found add now</p>
 <img src="{% static 'images/empty-todo.png' %}" alt="empty-todo">
 {% endfor %}
+
+
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if todos.has_previous %}
+        <a class="page-link" href="?page=1">&laquo; first</a>
+        <a class="page-link" href="?page={{ todos.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ todos.number }} of {{ todos.paginator.num_pages }}.
+        </span>
+
+        {% if todos.has_next %}
+        <a class="page-link" href="?page={{ todos.next_page_number }}">next</a>
+        <a class="page-link" href="?page={{ todos.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
 
 {% endblock %}
