@@ -1,4 +1,4 @@
-# Django ToDo Application
+# Django-ToDo-Application
 
 ## Introduction
 
