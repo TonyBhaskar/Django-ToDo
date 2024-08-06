@@ -61,10 +61,10 @@ This is a simple ToDo application built using Django, which allows users to mana
 
 - **Admin Panel**: Manage users and customer data through the Django admin panel at `http://127.0.0.1:8000/admin/`.
 - **Login**: Securely log in to access and manage customer details.
-- **Add Task**:Use the form on the main page to add new tasks.
-- **Update Task**:Click on the edit icon next to a task to update its details.
-- **Delete Task**:Click on the delete icon to remove a task.
-- **Mark as Completed**:Check the box next to a task to mark it as completed.
+- **Add Task**: Use the form on the main page to add new tasks.
+- **Update Task**: Click on the edit icon next to a task to update its details.
+- **Delete Task**: Click on the delete icon to remove a task.
+- **Mark as Completed**: Check the box next to a task to mark it as completed.
 - **Logout**: Securely log out from the application.
 
 ## Contributing
